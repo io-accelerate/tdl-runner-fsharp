@@ -75,7 +75,8 @@ let main argv =
         .WithActionProvider(new UserInputAction(argv))
         .Start()
 
-    printf "Press any key to continue . . . "
-    Console.ReadKey() |> ignore
+    if not Console.IsInputRedirected then
+        printfn "Press any key to exit..."
+        Console.ReadKey() |> ignore
     
     0 // return an integer exit code
