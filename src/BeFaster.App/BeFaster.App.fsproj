@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Compile Include="Solutions\CHK\CheckoutSolution.fs" />
+    <Compile Include="Solutions\DMO\InventoryItem.fs" />
     <Compile Include="Solutions\DMO\DemoRound1Solution.fs" />
     <Compile Include="Solutions\DMO\DemoRound2Solution.fs" />
     <Compile Include="Solutions\DMO\DemoRound3Solution.fs" />
