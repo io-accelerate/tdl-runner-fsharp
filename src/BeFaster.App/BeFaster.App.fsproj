@@ -8,12 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Solutions\CHK\Checkout.fs" />
-    <Compile Include="Solutions\FIZ\FizzBuzz.fs" />
-    <Compile Include="Solutions\HLO\Hello.fs" />
-    <Compile Include="Solutions\SUM\Sum.fs" />
+    <Compile Include="Solutions\CHK\CheckoutSolution.fs" />
+    <Compile Include="Solutions\DMO\DemoRound1Solution.fs" />
+    <Compile Include="Solutions\DMO\DemoRound2Solution.fs" />
+    <Compile Include="Solutions\DMO\DemoRound3Solution.fs" />
+    <Compile Include="Solutions\DMO\DemoRound4n5Solution.fs" />
+    <Compile Include="Solutions\FIZ\FizzBuzzSolution.fs" />
+    <Compile Include="Solutions\HLO\HelloSolution.fs" />
+    <Compile Include="Solutions\SUM\SumSolution.fs" />
     <Compile Include="Solutions\TST\One.fs" />
     <Compile Include="Solutions\TST\Two.fs" />
+    <Compile Include="EntryPointMapping.fs" />
     <Compile Include="SendCommandToServer.fs" />
   </ItemGroup>
 

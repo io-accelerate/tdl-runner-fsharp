@@ -1,5 +1,6 @@
 ﻿open TDL.Client
 open TDL.Client.Runner
+open BeFaster.App
 open BeFaster.App.Solutions.CHK
 open BeFaster.App.Solutions.FIZ
 open BeFaster.App.Solutions.HLO
@@ -55,13 +56,26 @@ open System
 /// </summary>
 [<EntryPoint>]
 let main argv = 
+    let mapping = EntryPointMapping()
+
     let runner =
         QueueBasedImplementationRunner.Builder()
             .SetConfig(Utils.Utils.GetRunnerConfig())
-            .WithSolutionFor("sum", fun p -> Sum.sum(p.[0].GetAsInteger(), p.[1].GetAsInteger()) :> obj)
-            .WithSolutionFor("hello", fun p -> Hello.hello(p.[0].GetAsString()) :> obj)
-            .WithSolutionFor("fizz_buzz", fun p -> FizzBuzz.fizzBuzz(p.[0].GetAsInteger()) :> obj)
-            .WithSolutionFor("checkout", fun p -> Checkout.computePrice(p.[0].GetAsString()) :> obj)
+            .WithSolutionFor("sum", fun p -> mapping.Sum(p))
+            .WithSolutionFor("hello", fun p -> mapping.Hello(p))
+            .WithSolutionFor("fizz_buzz", fun p -> mapping.FizzBuzz(p))
+            .WithSolutionFor("checkout", fun p -> mapping.Checkout(p))
+            .WithSolutionFor("increment", fun p -> mapping.Increment(p))
+            .WithSolutionFor("to_uppercase", fun p -> mapping.ToUppercase(p))
+            .WithSolutionFor("letter_to_santa", fun p -> mapping.LetterToSanta(p))
+            .WithSolutionFor("count_lines", fun p -> mapping.CountLines(p))
+            .WithSolutionFor("array_sum", fun p -> mapping.ArraySum(p))
+            .WithSolutionFor("int_range", fun p -> mapping.IntRange(p))
+            .WithSolutionFor("filter_pass", fun p -> mapping.FilterPass(p))
+            .WithSolutionFor("inventory_add", fun p -> mapping.InventoryAdd(p))
+            .WithSolutionFor("inventory_size", fun p -> mapping.InventorySize(p))
+            .WithSolutionFor("inventory_get", fun p -> mapping.InventoryGet(p))
+            .WithSolutionFor("waves", fun p -> mapping.Waves(p))
             .Create()
 
     ChallengeSession.ForRunner(runner)

@@ -8,4 +8,5 @@ type SumSolutionTests() =
 
     [<Test>]
     member x.``2 + 3 = 5``() =
-        Assert.AreEqual(5, Sum.sum(2, 3))
+        let solution = SumSolution()
+        Assert.AreEqual(5, solution.Sum(2, 3))
