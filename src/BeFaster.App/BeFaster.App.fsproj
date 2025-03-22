@@ -9,14 +9,11 @@
 
   <ItemGroup>
     <Compile Include="Solutions\CHK\Checkout.fs" />
-    <Compile Include="Solutions\CHL\Checklite.fs" />
     <Compile Include="Solutions\FIZ\FizzBuzz.fs" />
     <Compile Include="Solutions\HLO\Hello.fs" />
     <Compile Include="Solutions\SUM\Sum.fs" />
     <Compile Include="Solutions\TST\One.fs" />
     <Compile Include="Solutions\TST\Two.fs" />
-    <Compile Include="Solutions\ARRS\ArraySum.fs" />
-    <Compile Include="Solutions\IRNG\IntRange.fs" />
     <Compile Include="SendCommandToServer.fs" />
   </ItemGroup>
 
