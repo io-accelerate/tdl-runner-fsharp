@@ -64,7 +64,9 @@ type EntryPointMapping() =
         demoRound3Solution.InventorySize() :> obj
 
     member _.InventoryGet(p: List<ParamAccessor>) : obj =
-        demoRound3Solution.InventoryGet(p.[0].GetAsString()) :> obj
+        match demoRound3Solution.InventoryGet(p.[0].GetAsString()) with
+            | Some item -> box item
+            | None -> null
 
     // Demo Round 4 and 5
     member _.Waves(p: List<ParamAccessor>) : obj =

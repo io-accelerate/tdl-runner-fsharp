@@ -10,5 +10,5 @@ type DemoRound3Solution() =
     member _.InventorySize(): int =
         raise (NotImplementedException())
 
-    member _.InventoryGet(id: string): InventoryItem =
+    member _.InventoryGet(sku: string): InventoryItem option =
         raise (NotImplementedException())
