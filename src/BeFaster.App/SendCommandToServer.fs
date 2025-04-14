@@ -65,6 +65,7 @@ let main argv =
             .WithSolutionFor("hello", fun p -> mapping.Hello(p))
             .WithSolutionFor("fizz_buzz", fun p -> mapping.FizzBuzz(p))
             .WithSolutionFor("checkout", fun p -> mapping.Checkout(p))
+            .WithSolutionFor("rabbit_hole", fun p -> mapping.RabbitHole(p))
             .WithSolutionFor("increment", fun p -> mapping.Increment(p))
             .WithSolutionFor("to_uppercase", fun p -> mapping.ToUppercase(p))
             .WithSolutionFor("letter_to_santa", fun p -> mapping.LetterToSanta(p))

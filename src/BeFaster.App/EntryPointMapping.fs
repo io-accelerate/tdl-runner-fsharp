@@ -5,6 +5,7 @@ open TDL.Client.Queue.Abstractions
 open BeFaster.App.Solutions.CHK
 open BeFaster.App.Solutions.DMO
 open BeFaster.App.Solutions.FIZ
+open BeFaster.App.Solutions.RBT
 open BeFaster.App.Solutions.HLO
 open BeFaster.App.Solutions.SUM
 
@@ -16,6 +17,7 @@ type EntryPointMapping() =
     let helloSolution = HelloSolution()
     let fizzBuzzSolution = FizzBuzzSolution()
     let checkoutSolution = CheckoutSolution()
+    let rabbitHoleSolution: RabbitHoleSolution = RabbitHoleSolution()
     let demoRound1Solution = DemoRound1Solution()
     let demoRound2Solution = DemoRound2Solution()
     let demoRound3Solution = DemoRound3Solution()
@@ -32,6 +34,15 @@ type EntryPointMapping() =
 
     member _.Checkout(p: List<ParamAccessor>) : obj =
         checkoutSolution.Checkout(p.[0].GetAsString()) :> obj
+
+    member _.RabbitHole(p: List<ParamAccessor>) : obj =
+        rabbitHoleSolution.RabbitHole(
+            p.[0].GetAsInteger(),
+            p.[1].GetAsInteger(),
+            p.[2].GetAsString(),
+            p.[3].GetAsMapOf<string>()
+            ) :> obj
+
 
     // Demo Round 1
     member _.Increment(p: List<ParamAccessor>) : obj =
