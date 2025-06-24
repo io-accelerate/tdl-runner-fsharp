@@ -8,6 +8,8 @@ open BeFaster.App.Solutions.FIZ
 open BeFaster.App.Solutions.RBT
 open BeFaster.App.Solutions.HLO
 open BeFaster.App.Solutions.SUM
+open BeFaster.App.Solutions.AMZ
+open BeFaster.App.Solutions.ULT
 
 /// <summary>
 /// Maps RPC events to instance method calls with correctly typed parameters.
@@ -18,6 +20,8 @@ type EntryPointMapping() =
     let fizzBuzzSolution = FizzBuzzSolution()
     let checkoutSolution = CheckoutSolution()
     let rabbitHoleSolution: RabbitHoleSolution = RabbitHoleSolution()
+    let amazingSolution: AmazingSolution = AmazingSolution()
+    let ultimateSolution: UltimateSolution = UltimateSolution()
     let demoRound1Solution = DemoRound1Solution()
     let demoRound2Solution = DemoRound2Solution()
     let demoRound3Solution = DemoRound3Solution()
@@ -43,6 +47,19 @@ type EntryPointMapping() =
             p.[3].GetAsMapOf<string>()
             ) :> obj
 
+    member _.AmazingMaze(p: List<ParamAccessor>) : obj =
+        amazingSolution.AmazingMaze(
+            p.[0].GetAsInteger(),
+            p.[1].GetAsInteger(),
+            p.[2].GetAsMapOf<string>()
+            ) :> obj
+
+    member _.UltimateMaze(p: List<ParamAccessor>) : obj =
+        ultimateSolution.UltimateMaze(
+            p.[0].GetAsInteger(),
+            p.[1].GetAsInteger(),
+            p.[2].GetAsMapOf<string>()
+            ) :> obj
 
     // Demo Round 1
     member _.Increment(p: List<ParamAccessor>) : obj =
