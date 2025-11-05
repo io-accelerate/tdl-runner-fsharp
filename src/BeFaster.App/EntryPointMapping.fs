@@ -6,6 +6,7 @@ open BeFaster.App.Solutions.CHK
 open BeFaster.App.Solutions.DMO
 open BeFaster.App.Solutions.FIZ
 open BeFaster.App.Solutions.RBT
+open BeFaster.App.Solutions.HOC
 open BeFaster.App.Solutions.HLO
 open BeFaster.App.Solutions.SUM
 open BeFaster.App.Solutions.AMZ
@@ -20,6 +21,7 @@ type EntryPointMapping() =
     let fizzBuzzSolution = FizzBuzzSolution()
     let checkoutSolution = CheckoutSolution()
     let rabbitHoleSolution: RabbitHoleSolution = RabbitHoleSolution()
+    let houseOfCardsSolution: HouseOfCardsSolution = HouseOfCardsSolution()
     let amazingSolution: AmazingSolution = AmazingSolution()
     let ultimateSolution: UltimateSolution = UltimateSolution()
     let demoRound1Solution = DemoRound1Solution()
@@ -45,6 +47,12 @@ type EntryPointMapping() =
             p.[1].GetAsInteger(),
             p.[2].GetAsString(),
             p.[3].GetAsMapOf<string>()
+            ) :> obj
+
+    member _.RenderHouse(p: List<ParamAccessor>) : obj =
+        houseOfCardsSolution.RenderHouse(
+            p.[0].GetAsString(),
+            p.[1].GetAsMapOf<string>()
             ) :> obj
 
     member _.AmazingMaze(p: List<ParamAccessor>) : obj =

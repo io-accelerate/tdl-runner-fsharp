@@ -18,6 +18,7 @@
     <Compile Include="Solutions\FIZ\FizzBuzzSolution.fs" />
     <Compile Include="Solutions\HLO\HelloSolution.fs" />
     <Compile Include="Solutions\RBT\RabbitHoleSolution.fs" />
+    <Compile Include="Solutions\HOC\HouseOfCardsSolution.fs" />
     <Compile Include="Solutions\SUM\SumSolution.fs" />
     <Compile Include="Solutions\TST\One.fs" />
     <Compile Include="Solutions\TST\Two.fs" />
